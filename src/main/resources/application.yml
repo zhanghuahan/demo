@@ -1,0 +1,38 @@
+
+spring:
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/zhh?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 1234
+
+    tomcat:
+      min-idle: 8
+      max-idle: 8
+      max-active: 20
+      initial-size: 10
+
+  #静态资源配置
+  resources:
+    static-locations: classpath:static/
+
+  #thymeleaf模板引擎配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    servlet:
+     content-type: text/html
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.demo.bean
+
+#logging:
+#  level:
+#    com:
+#      example:
+#        mapper : debug
